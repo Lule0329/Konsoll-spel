@@ -10,9 +10,11 @@ namespace Game
     {
         static void Main(string[] args)
         {
+            // sätter positionen för fiende nr 1
             GlobalVar.Enemy1[0] = GlobalVar.Enemy1Pos.Next(5, 30);
             GlobalVar.Enemy1[1] = 5;
 
+            // sätter positionen för fiende nr 2
             GlobalVar.Enemy2[0] = GlobalVar.Enemy1Pos.Next(30, 60);
             GlobalVar.Enemy2[1] = 25;
 
@@ -25,7 +27,7 @@ namespace Game
             }
         }
 
-        static void PlayerMovemet() 
+        static void PlayerMovemet() // Kollar vilket håll spelaren trycker
         {
             if (Console.ReadKey().Key == ConsoleKey.LeftArrow)
             {
@@ -80,7 +82,7 @@ namespace Game
             Console.Write("Y");
         }
 
-        static void PlayerInteract()
+        static void PlayerInteract() // kollar om spelaren har samma koordinater som en fiende
         {
             if (GlobalVar.PlayerPosX == GlobalVar.Enemy1[0] && GlobalVar.PlayerPosY == GlobalVar.Enemy1[1])
             {
@@ -90,6 +92,7 @@ namespace Game
 
         public class GlobalVar
         {
+            // Spelar Variabler
             public static int PlayerPosX;
             public static int PlayerPosY;
 
